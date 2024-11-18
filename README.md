@@ -1,5 +1,6 @@
 This is cammand line in Linux
-This is command line in Linux
+
+A. SETUP
 
 1. Fisrt install mysql server client, Chỉ cài 1 lần duy nhất, nhớ start
 
@@ -7,8 +8,8 @@ sudo apt update
 sudo apt install mysql-server mysql-client -y
 sudo service mysql start
 
-2. Run mysql: 
-sudo mysql
+2. Run mysql:  sudo mysql
+
 
 Output: 
 
@@ -27,15 +28,43 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 3. Set password:
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '@Phamhoangan21';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'phamhoangan21';
+FLUSH PRIVILEGES;
 
-4. Create databse 
 
-CREATE DATABASE budapest_demo
+B. LOGIN vào lại
 
-5. Download database 
+1. udo service mysql start
+2. mysql -u root -p
+3. Nhập mật khẩu
+4. Create databse:
 
-UPDATE user SET authentication_string=PASSWORD('phamhoangan21') WHERE User='root' AND Host='localhost';
+CREATE DATABASE budapest_demo;
 
-UPDATE user SET plugin='mysql_native_password' WHERE User='root' AND Host='localhost';
-FLUSH PRIVILEGES
+5. Check database: 
+show DATABASES
+6. Up load sakita 3 file and run
+
+mysql> SOURCE /workspaces/MySQL/sakila-schema.sql;
+mysql> SOURCE /workspaces/MySQL/sakila-data.sql;
+
+7. Sử dụng Sakila
+
+USE sakila;
+
+8. Show table: show full tables;
+
+9. Because you are using github code space so you are restricted from some paths , check path can export file then modife path in next step
+
+SHOW VARIABLES LIKE 'secure_file_priv';
+
+
+10. Choose tables: select * from sakila.actor
+
+SELECT * FROM sakila.actor
+INTO OUTFILE '/var/lib/mysql-files/test_1_actor.csv'  
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'  
+LINES TERMINATED BY '\n';
+
+11. Use a nother terminal, give access chmod 777 to /var/lib/mysql-files/test_1_actor.csv so that you can access that file.
