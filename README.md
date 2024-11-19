@@ -34,7 +34,7 @@ FLUSH PRIVILEGES;
 
 B. LOGIN vào lại
 
-1. udo service mysql start
+1. sudo service mysql start
 2. mysql -u root -p
 3. Nhập mật khẩu
 4. Create databse:
@@ -68,3 +68,18 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 
 11. Use a nother terminal, give access chmod 777 to /var/lib/mysql-files/test_1_actor.csv so that you can access that file.
+
+12. create web.py and push infor into web
+
+- Open bash -> vi web.py
+- Inser codelines .... 
+
+13. Open Bash -> type curl localhost:80801,PENELOPE,GUINESS,2006-02-15 04:34:33
+
+output format: 
+,PENELOPE,GUINESS,2006-02-15 04:34:33
+2,NICK,WAHLBERG,2006-02-15 04:34:33
+3,ED,CHASE,2006-02-15 04:34:33
+4,JENNIFER,DAVIS,2006-02-15 04:34:33
+...
+![alt text](image.png)
