@@ -1,6 +1,6 @@
 This is cammand line in Linux
 
-A. SETUP
+# A. SETUP
 
 1. Fisrt install mysql server client, Chỉ cài 1 lần duy nhất, nhớ start
 
@@ -32,7 +32,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'phamhoan
 FLUSH PRIVILEGES;
 
 
-B. LOGIN vào lại
+# B. LOGIN vào lại
 
 1. sudo service mysql start
 2. mysql -u root -p
