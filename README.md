@@ -4,9 +4,9 @@ This is cammand line in Linux
 
 1. Fisrt install mysql server client, Chỉ cài 1 lần duy nhất, nhớ start
 
-sudo apt update
-sudo apt install mysql-server mysql-client -y
-sudo service mysql start
+        sudo apt update
+        sudo apt install mysql-server mysql-client -y
+        sudo service mysql start
 
 2. Run mysql:  sudo mysql
 
